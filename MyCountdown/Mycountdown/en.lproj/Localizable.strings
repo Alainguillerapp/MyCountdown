@@ -1,0 +1,138 @@
+/* 
+  Localizable.strings
+  Mycountdown
+
+  Created by Michael on 11/14/25.
+  
+*/
+
+/* Sorting */
+"Sort" = "Sort";
+"Sort by upcoming" = "Sort by upcoming";
+"Sort manualy" = "Sort manualy";
+"All" = "All";
+
+/* Import/Export */
+"Import / Export" = "Import / Export";
+"Import" = "Import";
+"Export" = "Export";
+"Export all countdowns to Calendar?" = "Export all countdowns to Calendar?";
+"Events will be added or updated in the existing “Countdowns” calendar." = "Events will be added or updated in the existing “Countdowns” calendar.";
+"Export Successful" = "Export Successful";
+"View in calendar" = "View in calendar";
+"You don't have any archived counters, click the " = "You don't have any archived counters, click the ";
+"back button." = "back button.";
+
+/* Time units */
+"Days" = "Days";
+"Years" = "Years";
+"Months" = "Months";
+"Weeks" = "Weeks";
+"Hours" = "Hours";
+"Minutes" = "Minutes";
+"Seconds" = "Seconds";
+
+"DAYS" = "DAYS";
+"YEARS" = "YEARS";
+"MONTHS" = "MONTHS";
+"WEEKS" = "WEEKS";
+"HOURS" = "HOURS";
+"MINUTES" = "MINUTES";
+"SECONDS" = "SECONDS";
+
+/* Search & Empty */
+"Search countdown..." = "Search countdown...";
+"Add Countdown" = "Add Countdown";
+"Archive" = "Archive";
+"Delete" = "Delete";
+"You don't have any counters, click the " = "You don't have any counters, click the ";
+"add button." = "add button.";
+"Add Note" = "Add Note";
+"Here can be your note" = "Here can be your note";
+"Countdowns" = "Countdowns";
+"Go premium" = "Go premium";
+"Reminders" = "Reminders";
+"Celebrations" = "Celebrations";
+"Birthdays" = "Birthdays";
+"Fri, 26 Nov 2025" = "Fri, 26 Nov 2025";
+"Thu, 6 Nov 2025" = "Thu, 6 Nov 2025";
+"Are you sure you want to permanently delete this countdown?" = "Are you sure you want to permanently delete this countdown?";
+"Delete Countdown" = "Delete Countdown";
+"Countdown successfully duplicated!" = "Countdown successfully duplicated!";
+"Countdown successfully archived!" = "Countdown successfully archived!";
+
+/* New Countdown Screen */
+"New Countdown" = "New Countdown";
+"Event name" = "Event name";
+"e.g., Summer Festival" = "e.g., Summer Festival";
+"Give your countdown a meaningful name" = "Give your countdown a meaningful name";
+"This field is required" = "This field is required";
+"Select icon" = "Select icon";
+"Pick a date" = "Pick a date";
+"Count only weekdays" = "Count only weekdays";
+"(Monday to Friday)" = "(Monday to Friday)";
+"Pick a time" = "Pick a time";
+"All day" = "All day";
+"Pick a color" = "Pick a color";
+"Pick compact format - premium" = "Pick compact format - premium";
+"Pick expanses format - premium" = "Pick expanses format - premium";
+"Will show time remaining in " = "Will show time remaining in ";
+"Use Same Format in Small Widget" = "Use Same Format in Small Widget";
+"(seconds not supported)" = "(seconds not supported)";
+"Remind me" = "Remind me";
+"When the countdown finishes" = "When the countdown finishes";
+"1 day before" = "1 day before";
+"1 week before" = "1 week before";
+"UNLOCK FOREVER FOR " = "UNLOCK FOREVER FOR " ;
+"Preview" = "Preview";
+"Today!" = "Today!";
+
+/* Go premium */
+"Summer Festival\n2025" = "Summer Festival\n2025";
+"days left" = "days left";
+"Music Festival" = "Music Festival";
+" Unlock All Widgets forever" = " Unlock All Widgets forever";
+" Premium features" = " Premium features";
+" Pay once, use it forever" = " Pay once, use it forever";
+"Go premium" = "Go premium";
+"Restore purchases" = "Restore purchases";
+"No subscriptions. No surprises.\nIf you have any questions, just tap here." = "No subscriptions. No surprises.\nIf you have any questions, just tap here.";
+"Feedback" = "Feedback";
+"Hi there!" = "Hi there!";
+"New Event" = "New Event";
+
+
+/* Tags & Organization */
+"ORGANIZE" = "ORGANIZE";
+"Manage Tags" = "Manage Tags";
+"Birthdays" = "Birthdays";
+"Celebrations" = "Celebrations";
+"Reminnders" = "Reminders";
+"Add New Tag…" = "Add New Tag…";
+"Cancel" = "Cancel";
+"Create" = "Create";
+"Done" = "Done";
+"Cannot add more than 8 tags" = "Impossible d'ajouter plus de 8 tags";
+
+
+
+/* Months */
+"January" = "January";
+"February" = "February";
+"March" = "March";
+"April" = "April";
+"May" = "May";
+"June" = "June";
+"July" = "July";
+"August" = "August";
+"September" = "September";
+"October" = "October";
+"November" = "November";
+"December" = "December";
+
+/* Notifications */
+"Your countdown is tomorrow!" = "Your countdown is tomorrow!";
+"Your countdown is completed!" = "Your countdown is completed!";
+"Your countdown is tomorrow at !" = "Your countdown is tomorrow at !";
+"One week left until your countdown!" = "One week left until your countdown!";
+"One week left until your countdown at !" = "One week left until your countdown at !";

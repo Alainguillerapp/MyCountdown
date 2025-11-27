@@ -1,0 +1,135 @@
+/* 
+  Localizable.strings
+  Mycountdown
+
+  Created by Michael on 11/14/25.
+  
+*/
+
+/* Sorting */
+"Sort" = "Trier";
+"Sort by upcoming" = "Trier par date";
+"Sort manualy" = "Trier manuellement";
+"All" = "Tout";
+
+/* Import/Export */
+"Import / Export" = "Importer / Exporter";
+"Import" = "Importer";
+"Export" = "Exporter";
+"Export all countdowns to Calendar?" = "Exporter tous les comptes à rebours vers le calendrier ?";
+"Events will be added or updated in the existing “Countdowns” calendar." = "Les événements seront ajoutés ou mis à jour dans le calendrier «Comptes à rebours» existant.";
+"Export Successful" = "Exportation réussie";
+"View in calendar" = "Afficher dans le calendrie";
+"You don't have any archived counters, click the " = "Vous n'avez aucun compteur archivé, cliquez sur le ";
+"back button." = "bouton retour.";
+
+/* Time units */
+"Days" = "Jours";
+"Years" = "Années";
+"Months" = "Mois";
+"Weeks" = "Semaines";
+"Hours" = "Heures";
+"Minutes" = "Minutes";
+"Seconds" = "Secondes";
+
+"DAYS" = "JOURS";
+"YEARS" = "ANNEES";
+"MONTHS" = "MOIS";
+"WEEKS" = "SEMAINES";
+"HOURS" = "HEURES";
+"MINUTES" = "MINUTES";
+"SECONDS" = "SECONDES";
+
+/* Search & Empty */
+"Search countdown..." = "Rechercher le compte à rebours...";
+"Add Countdown" = "Ajouter un compte à rebours";
+"Duplicate" = "Double";
+"Delete" = "Supprimer";
+"Add Note" = "Ajouter une Note";
+"You don't have any counters, click the " = "Vous n'avez aucun compteur, cliquez sur le ";
+"add button." = "bouton Ajouter.";
+"Here can be your note" = "Voici votre note";
+"Countdowns" = "Comptes à rebours";
+"Go premium" = "Passez à la version premium";
+"Reminders" = "Rappels";
+"Celebrations" = "Célébrations";
+"Birthdays" = "Anniversaires";
+"Fri, 26 Nov 2025" = "Ven., 26 nov. 2025";
+"Thu, 6 Nov 2025" = "Jeu 6 nov. 2025";
+
+/* New Countdown Screen */
+"New Countdown" = "Nouveau compte à rebours";
+"Event name" = "Nom de l'événement";
+"e.g., Summer Festival" = "Par exemple, Festival d'été";
+"Give your countdown a meaningful name" = "Donnez un nom significatif à votre compte à rebours";
+"This field is required." = "Ce champ est obligatoire.";
+"Select icon" = "Sélectionnez une icône";
+"Pick a date" = "Choisissez une date";
+"Count only weekdays" = "Compter uniquement les jours ouvrables";
+"(Monday to Friday)" = "(du Lundi au Vendredi)";
+"Pick a time" = "Choisissez une heure";
+"All-day" = "Toute la journée";
+"Pick a color" = "Choisissez une couleur";
+"Pick expanses format - premium" = "Format de sélection des dépenses - prime";
+"Pick compact format - premium" = "Choisissez le format compact - prime";
+"Will show time remaining in " = "Affichera le temps restant en ";
+"Use Same Format in Small Widget" = "Utiliser le même format dans les petits widgets";
+"(seconds not supported)" = "(les secondes ne sont pas prises en charge)";
+"Remind me" = "Me rappeler";
+"When the countdown finishes" = "À la fin du compte à rebours";
+"1 day before" = "1 jour avant";
+"1 week before" = "1 semaine avant";
+"UNLOCK FOREVER FOR " = "DÉVERROUILLEZ POUR TOUJOURS POUR ";
+"Preview" = "Aperçu";
+"Today!" = "Aujourd'hui!";
+"Are you sure you want to permanently delete this countdown?" = "Êtes-vous sûr de vouloir supprimer définitivement ce compte à rebours ?";
+"Delete Countdown" = "Compte à rebours de suppression";
+"Countdown successfully archived!" = "Compte à rebours archivé avec succès!";
+"Countdown successfully duplicated!" = "Compte à rebours dupliqué avec succès!";
+
+
+/* Go premium */
+"Summer Festival\n2025" = "Festival d'été\n2025";
+"days left" = "jours restants";
+"Music Festival" = "Festival de musique";
+" Unlock All Widgets forever" = " Débloquez tous les widgets pour toujours";
+" Premium features" = " Fonctionnalités Premium";
+" Pay once, use it forever" = " Payez une fois, utilisez-le à vie";
+"Go premium" = "Passez à la version premium";
+"Restore purchases" = "Restaurer mes achats";
+"No subscriptions. No surprises.\nIf you have any questions, just tap here." = "Aucun abonnement. Aucune surprise.\nPour toute question, cliquez ici.";
+"Feedback" = "Commentaires";
+"Hi there!" = "Bonjour !";
+"New Event" = "Nouvel événement";
+
+/* Tags & Organization */
+"Organize" = "Organiser";
+"Manage Tags" = "Gérer les balises";
+"Birthdays" = "Anniversaires";
+"Celebrations" = "Célébrations";
+"Reminnders" = "Rappels";
+"Add New Tag…" = "Ajouter une nouvelle balise...";
+"Cancel" = "Annuler";
+"Create" = "Créer";
+"Done" = "Fait";
+"Cannot add more than 8 tags" = "Cannot add more than 8 tags";
+
+/* Months */
+"January" = "Janvier";
+"February" = "Février";
+"March" = "Mars";
+"April" = "Avril";
+"May" = "Mai";
+"June" = "Juin";
+"July" = "Juillet";
+"August" = "Août";
+"September" = "Septembre";
+"October" = "Octobre";
+"November" = "Novembre";
+"December" = "Décembre";
+
+/* Notifications */
+"Your countdown is tomorrow!" = "Votre compte à rebours commence demain !";
+"Your countdown is completed!" = "Votre compte à rebours est terminé !";
+"One week left until your countdown!" = "Plus qu'une semaine avant le compte à rebours !";
+"One week left until your countdown at !" = "Plus qu'une semaine avant le compte à rebours !";
