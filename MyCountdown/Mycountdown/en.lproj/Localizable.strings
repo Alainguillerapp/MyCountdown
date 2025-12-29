@@ -86,13 +86,17 @@
 "UNLOCK FOREVER FOR " = "UNLOCK FOREVER FOR " ;
 "Preview" = "Preview";
 "Today!" = "Today!";
+"Unlock widgets for $2.99" = "Unlock widgets for $2.99";
+"• Lifetime access" = "• Lifetime access";
+"• One-time payment" = "• One-time payment";
+"Get" = "Get";
 
 /* Go premium */
 "Summer Festival\n2025" = "Summer Festival\n2025";
 "days left" = "days left";
 "Music Festival" = "Music Festival";
 " Unlock All Widgets forever" = " Unlock All Widgets forever";
-" Premium features" = " Premium features";
+" Add unlimited events" = " Add unlimited events";
 " Pay once, use it forever" = " Pay once, use it forever";
 "Go premium" = "Go premium";
 "Restore purchases" = "Restore purchases";
@@ -100,6 +104,8 @@
 "Feedback" = "Feedback";
 "Hi there!" = "Hi there!";
 "New Event" = "New Event";
+"2,99 USD" = "2,99 USD";
+"Pleas send us an email to" = "Pleas send us an email to";
 
 
 /* Tags & Organization */

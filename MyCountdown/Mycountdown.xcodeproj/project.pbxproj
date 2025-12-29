@@ -398,13 +398,13 @@
 				CODE_SIGN_ENTITLEMENTS = Mycountdown/Mycountdown.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"Mycountdown/Preview Content\"";
-				DEVELOPMENT_TEAM = 9BR9HH6Q9K;
+				DEVELOPMENT_TEAM = 5UWP44G6Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mycountdown/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MyCountdown Reminder";
+				INFOPLIST_KEY_CFBundleDisplayName = MyCountdown;
 				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "MyCountdown need access to your calendar to import events as countdowns";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -416,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aliang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliang.eldevelop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -437,13 +437,13 @@
 				CODE_SIGN_ENTITLEMENTS = Mycountdown/Mycountdown.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"Mycountdown/Preview Content\"";
-				DEVELOPMENT_TEAM = 9BR9HH6Q9K;
+				DEVELOPMENT_TEAM = 5UWP44G6Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mycountdown/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MyCountdown Reminder";
+				INFOPLIST_KEY_CFBundleDisplayName = MyCountdown;
 				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "MyCountdown need access to your calendar to import events as countdowns";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aliang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliang.eldevelop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -476,7 +476,7 @@
 				CODE_SIGN_ENTITLEMENTS = MycountdownWidgetsExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = 9BR9HH6Q9K;
+				DEVELOPMENT_TEAM = 5UWP44G6Q6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MycountdownWidgetsExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MycountdownWidgetsExtension;
@@ -488,7 +488,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aliang.MycountdownWidgetsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliang.eldevelop.MycountdownWidgetsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -508,7 +508,7 @@
 				CODE_SIGN_ENTITLEMENTS = MycountdownWidgetsExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = 9BR9HH6Q9K;
+				DEVELOPMENT_TEAM = 5UWP44G6Q6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MycountdownWidgetsExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MycountdownWidgetsExtension;
@@ -520,7 +520,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aliang.MycountdownWidgetsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aliang.eldevelop.MycountdownWidgetsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

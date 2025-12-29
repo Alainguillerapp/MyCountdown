@@ -86,14 +86,17 @@
 "Delete Countdown" = "Compte à rebours de suppression";
 "Countdown successfully archived!" = "Compte à rebours archivé avec succès!";
 "Countdown successfully duplicated!" = "Compte à rebours dupliqué avec succès!";
-
+"Unlock widgets for $2.99" = "Déverrouille les widgets pour 2.99€";
+"• Lifetime access" = "• Accès à vie";
+"• One-time payment" = "• Paiement unique";
+"Get" = "OBTENIR";
 
 /* Go premium */
 "Summer Festival\n2025" = "Festival d'été\n2025";
 "days left" = "jours restants";
 "Music Festival" = "Festival de musique";
 " Unlock All Widgets forever" = " Débloquez tous les widgets pour toujours";
-" Premium features" = " Fonctionnalités Premium";
+" Add unlimited events" = " Ajouter des événements illimités";
 " Pay once, use it forever" = " Payez une fois, utilisez-le à vie";
 "Go premium" = "Passez à la version premium";
 "Restore purchases" = "Restaurer mes achats";
@@ -101,6 +104,8 @@
 "Feedback" = "Commentaires";
 "Hi there!" = "Bonjour !";
 "New Event" = "Nouvel événement";
+"2,99 USD" = "2,99 €";
+"Pleas send us an email to" = "Veuillez nous envoyer un e-mail à";
 
 /* Tags & Organization */
 "Organize" = "Organiser";
