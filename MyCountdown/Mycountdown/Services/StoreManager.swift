@@ -6,139 +6,129 @@
 //
 
 import Foundation
-import StoreKit
+import RevenueCat
 
 @MainActor
-final class StoreManager: ObservableObject {
-  
-  @Published var premiumUnlocked: Bool = false
-  @Published var product: Product?
-  
-  private let productID = "com.aliang.premium"
-  private let premiumKey = "isPremium"
-  
-  private var appGroupDefaults: UserDefaults? {
-      UserDefaults(suiteName: "group.com.aliang")
-  }
-  
-  init() {
-    Task {
-      loadPremiumStatusFromStorage()
-      await fetchProduct()
-      await checkEntitlement()
-      await observeTransactions()
-    }
-  }
-  
-  // MARK: - Public setter (if needed)
-  func setPremiumStatus(_ isPremium: Bool) {
-      premiumUnlocked = isPremium
-      appGroupDefaults?.set(isPremium, forKey: premiumKey)
-  }
-  
-  // MARK: - Fetch product
-  func fetchProduct() async {
-    do {
-      let products = try await Product.products(for: [productID])
-      product = products.first
-    } catch {
-      print("❌ Failed to fetch product:", error)
-    }
-  }
-  
-  // MARK: - Buy premium
-  func buyPremium() async {
-    guard let product else {
-      print("❌ No product loaded")
-      return
+final class StoreManager: NSObject, ObservableObject {
+    
+    @Published private(set) var premiumUnlocked: Bool = false
+    @Published private(set) var isLoading: Bool = true
+    @Published private(set) var weeklyPackage: Package?
+    @Published private(set) var yearlyPackage: Package?
+    @Published private(set) var lifetimePackage: Package?
+    @Published var purchaseInProgress = false
+    
+    private let entitlementID = "premium"
+    private let appGroupID = "group.com.aliang"
+    private let premiumKey = "isPremium"
+    
+    override init() {
+        super.init()
+        Purchases.shared.delegate = self
+        checkPremiumOnLaunch()
+        loadOfferings()
     }
     
-    do {
-      let result = try await product.purchase()
-      
-      switch result {
-      case .success(let verification):
-        switch verification {
-        case .verified(let transaction):
-          unlockPremium()
-          await transaction.finish()
-          print("🎉 Premium purchased and transaction finished")
-          
-        case .unverified(_, let error):
-          print("⚠️ Purchase unverified:", error)
+    func checkPremiumOnLaunch() {
+        Purchases.shared.getCustomerInfo { [weak self] info, _ in
+            self?.updatePremium(from: info)
+        }
+    }
+    
+    private func updatePremium(from info: CustomerInfo?) {
+        let isPro = info?.entitlements[entitlementID]?.isActive == true
+        
+        Task { @MainActor in
+            premiumUnlocked = isPro
+            
+            UserDefaults(suiteName: appGroupID)?
+                .set(isPro, forKey: premiumKey)
+        }
+    }
+    
+    func refreshCustomInfo() {
+        Task { @MainActor in
+            isLoading = true
         }
         
-      case .userCancelled:
-        print("ℹ️ Purchase cancelled")
-        
-      case .pending:
-        print("ℹ️ Purchase pending")
-        
-      @unknown default:
-        print("⚠️ Unknown purchase result")
-      }
-      
-    } catch {
-      print("❌ Purchase failed:", error)
+        Purchases.shared.getCustomerInfo { [weak self] info, error in
+            guard let self else { return }
+            
+            let isPro =
+            info?.entitlements[self.entitlementID]?.isActive == true
+            
+            Task { @MainActor in
+                self.premiumUnlocked = isPro
+                self.isLoading = false
+                self.saveProStatusToStorage(isPro)
+            }
+        }
     }
-  }
-  
-  // MARK: - Observe transactions
-  func observeTransactions() async {
-      for await result in Transaction.updates {
-          switch result {
-          case .verified(let transaction):
-              if transaction.productID == productID {
-                unlockPremium()
-              }
-              await transaction.finish()
+    
+    func loadOfferings() {
+        Purchases.shared.getOfferings { [weak self] offerings, error in
 
-          case .unverified(_, let error):
-              print("⚠️ Unverified transaction:", error)
-          }
-      }
-  }
-  
-  // MARK: - Restore purchases
-  func restore() async {
-    do {
-      try await AppStore.sync()
-      await checkEntitlement()
-      print("🔄 Restore complete")
-    } catch {
-      print("❌ Restore failed:", error)
+            guard let self else { return }
+            guard let offering = offerings?.current else {
+                print("❌ No current offering")
+                return
+            }
+
+            self.weeklyPackage = offering.weekly
+            self.yearlyPackage = offering.annual
+            self.lifetimePackage = offering.lifetime
+
+            print("✅ Packages loaded:")
+            print("Weekly:", offering.weekly as Any)
+            print("Yearly:", offering.annual as Any)
+            print("Lifetime:", offering.lifetime as Any)
+        }
     }
-  }
-  
-  func checkEntitlement() async {
-    var owned = false
     
-    for await result in Transaction.currentEntitlements {
-      switch result {
-      case .verified(let transaction):
-        if transaction.productID == productID {
-          owned = true
-          unlockPremium()
-          print("🔐 Premium entitlement verified")
+    //MARK: - Purchase
+    func purchase(package: Package) async throws {
+        
+        await MainActor.run {
+            purchaseInProgress = true
         }
         
-      case .unverified(_, let error):
-        print("⚠️ Unverified transaction:", error)
-      }
+        let result = try await Purchases.shared.purchase(package: package)
+        
+        let isPro = result.customerInfo.entitlements[entitlementID]?.isActive == true
+        
+        await MainActor.run {
+            purchaseInProgress = false
+            premiumUnlocked = isPro
+            saveProStatusToStorage(isPro)
+        }
     }
     
-    if !owned {
-      premiumUnlocked = UserDefaults.standard.bool(forKey: premiumKey)
+    //MARK: - Restore
+    func restorePurchases() async {
+        do {
+            let info = try await Purchases.shared.restorePurchases()
+            let isPro = info.entitlements[entitlementID]?.isActive == true
+            
+            await MainActor.run {
+                premiumUnlocked = isPro
+                saveProStatusToStorage(isPro)
+            }
+        } catch {
+            print("❌ Restore failed", error)
+        }
     }
-  }
-  
-  // MARK: - Unlock & Save
-  private func unlockPremium() {
-    premiumUnlocked = true
-    appGroupDefaults?.set(true, forKey: premiumKey)
-  }
-  
-  private func loadPremiumStatusFromStorage() {
-    premiumUnlocked = appGroupDefaults?.bool(forKey: premiumKey) ?? false
-  }
+    
+    //MARK: - Storage (Widget support)
+    private func saveProStatusToStorage(_ isPro: Bool) {
+        UserDefaults(suiteName: appGroupID)?
+            .set(isPro, forKey: premiumKey)
+    }
+}
+
+extension StoreManager: PurchasesDelegate {
+    nonisolated func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
+        Task { @MainActor in
+            self.updatePremium(from: customerInfo)
+        }
+    }
 }

@@ -86,9 +86,9 @@
 "Delete Countdown" = "Compte à rebours de suppression";
 "Countdown successfully archived!" = "Compte à rebours archivé avec succès!";
 "Countdown successfully duplicated!" = "Compte à rebours dupliqué avec succès!";
-"Unlock widgets for $2.99" = "Déverrouille les widgets pour 2.99€";
-"• Lifetime access" = "• Accès à vie";
-"• One-time payment" = "• Paiement unique";
+"Unlock widgets for $2.99/month" = "Débloquez les widgets pour 2,99 €/mois";
+"• 3-day free trial" = "• Essai gratuit de 3 jours";
+"• No payment now" = "• Aucun paiement immédiat";
 "Get" = "OBTENIR";
 
 /* Go premium */
@@ -106,6 +106,73 @@
 "New Event" = "Nouvel événement";
 "2,99 USD" = "2,99 €";
 "Pleas send us an email to" = "Veuillez nous envoyer un e-mail à";
+
+/* PaywallGoPremium and PaywallPreview */
+"Becomes " = "Devient ";
+"7x more efficient" = "7 fois plus efficace";
+"\nand never forgets an event" = "\net n'oublie jamais un événement";
+"Add unlimited events" = "Ajoutez un nombre illimité d'événements";
+"Unlock widgets" = "Débloquez des widgets";
+"Customize your counter" = "Personnalisez votre compteur";
+"Change counter information" = "Modifiez les informations du compteur";
+"Import your data" = "Importez vos données";
+"TRY IT FOR FREE 🙌" = "ESSAYEZ-LE GRATUITEMENT 🙌";
+"We're offering you\n" = "Nous vous offrons\n";
+"3 free days\n" = "3 jours gratuits\n";
+"to try MyCountdown Pro" = "Pour essayer MyCountdown Pro";
+"We'll " = "Nous ";
+"call you back\n" = "vous rappellerons\n";
+"one day before\n" = " la veille de la fin\n";
+"the end of your trial" = " de votre essai";
+"START AN EVENT NOW" = "DÉMARREZ UN ÉVÉNEMENT MAINTENANT";
+"🔔 Call me back in 2 days" = "🔔 Rappelez-moi dans 2 jours";
+"FREE TRIAL ⸱ SAVE 89%" = "ESSAI GRATUIT · ÉCONOMISEZ 89 %";
+"1 Year" = "1 an";
+" paid yearly" = "%@ par an";
+"2.99 €" = "2,99 €";
+"/ month" = "/mois";
+"1 Week" = "1 semaine";
+" paid weekly" = "%@ par semaine";
+"7.99 €" = "7,99 €";
+"/ week" = "/semaine";
+"Lifetime" = "À vie";
+"One-time payment" = "Paiement unique";
+"99.99 €" = "99,99 €";
+"Paid Once" = "Payé une seule fois";
+"v see options" = "    v Voir les options";
+"4.8 App Store" = "4,8 sur l'App Store";
+"“It feels playful, but I’m actually being productive”" = "“C'est ludique, mais en réalité, je suis productif”";
+"Don't let yourself get overwhelmed" = "Ne vous laissez pas submerger.";
+"Add counters to your Home Screen" = "Ajoutez des compteurs à votre écran d'accueil.";
+"Years, months, weeks, days" = "Années, mois, semaines, jours.";
+"Real-time updates" = "Mises à jour en temps réel.";
+"Changed your phone?" = "Vous avez changé de téléphone ?";
+"Support creators" = "Soutenez les créateurs.";
+"We have big dreams for the app" = "Nous avons de grandes ambitions pour l'application.";
+"FREE 3-day trial period" = "Essai gratuit de 3 jours.";
+"ADD UNLIMITED EVENTS" = "AJOUTEZ UN NOMBRE ILLIMITÉ D'ÉVÉNEMENTS";
+"✓️ No payment due now" = "✓ Aucun paiement requis pour le moment";
+"Cancel anytime.\nRefund guaranteed." = "Annulation possible à tout moment.\nRemboursement garanti.";
+"Pay once, unlimited access forever" = "Paiement unique, accès illimité à vie";
+"Confidentiality" = "Confidentialité";
+"Terms" = "Conditions d'utilisation";
+"Restore" = "Restaurer";
+
+/* OnboardingView */
+"get_started" = "Commencer";
+"start_planning" = "Commençons à planifier les événements importants !";
+"congratulations" = "Félicitations";
+"two_minutes_value" = "En 2 minutes par jour, transformez vos moments désordonnés en événements organisés.";
+"next" = "Suivant";
+"your_events" = "Vos événements";
+"no_limits" = "Aucune limite, juste la liberté de suivre ce qui compte";
+"no_stress" = "Sans stress";
+"event_notifications" = "Recevez une notification 1 jour ou 1 semaine avant la fin de l’événement";
+"gain_serenity" = "Gagnez en sérénité";
+"full_control" = "Prenez le contrôle total de vos événements et widgets";
+"user_quote" = "« Comme un jeu, mais en mieux, car on se sent productif en l’utilisant »";
+"lets_begin" = "Commençons";
+
 
 /* Tags & Organization */
 "Organize" = "Organiser";

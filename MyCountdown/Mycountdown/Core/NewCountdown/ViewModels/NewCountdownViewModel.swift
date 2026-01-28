@@ -44,7 +44,7 @@ final class NewCountdownViewModel: ObservableObject {
   @Published var remindWeekBefore: Bool = false
   
   // MARK: - Tags
-  @Published var tags: [String] = ["🎂 Birthdays", "🎉 Celebrations", "⏰ Reminders"]
+  @Published var tags: [String] = []
   @Published var selectedTags: [String] = []
   
   // MARK: - Countdown format
@@ -67,6 +67,7 @@ final class NewCountdownViewModel: ObservableObject {
       self.weekdaysOnly = countdown.weekdaysOnly
       self.allDay = countdown.allDay
       self.color = Color(hex: countdown.colorHex ?? "#FBC024") ?? .expansesOrange
+      self.userSelectedColor = true
       self.remindWhenFinished = countdown.remindWhenFinished
       self.remindDayBefore = countdown.remindDayBefore
       self.remindWeekBefore = countdown.remindWeekBefore
@@ -106,6 +107,8 @@ final class NewCountdownViewModel: ObservableObject {
     } else {
       assignedColor = color
     }
+      
+    let finalTags = tags.isEmpty ? [] : tags
     
     let newCountdown = Countdown(
       name: name,
@@ -117,7 +120,7 @@ final class NewCountdownViewModel: ObservableObject {
       remindDayBefore: remindDayBefore,
       remindWeekBefore: remindWeekBefore,
       organizer: nil,
-      tags: tags,
+      tags: finalTags,
       selectedTags: selectedTags,
       allDay: allDay,
       weekdaysOnly: weekdaysOnly,
@@ -137,20 +140,14 @@ final class NewCountdownViewModel: ObservableObject {
   private func updateCountdown(_ countdown: Countdown, context: ModelContext) {
     let finalDate = buildFinalDate()
     
-    let assignedColor: Color
-    
-    if !userSelectedColor {
-      assignedColor = assignColorForNewCountdown(context: context)
-    } else {
-      assignedColor = color
-    }
-    
+    let assignedColor = userSelectedColor ? color : assignColorForNewCountdown(context: context)
+      
+    countdown.colorHex = assignedColor.toHexString()
     countdown.name = name
     countdown.icon = emoji
     countdown.date = finalDate
     countdown.time = time
     countdown.allDay = allDay
-    countdown.colorHex = assignedColor.toHexString()
     countdown.tags = tags
     countdown.selectedTags = selectedTags
     countdown.selectedUnits = selectedUnits

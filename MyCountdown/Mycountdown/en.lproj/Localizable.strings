@@ -86,9 +86,9 @@
 "UNLOCK FOREVER FOR " = "UNLOCK FOREVER FOR " ;
 "Preview" = "Preview";
 "Today!" = "Today!";
-"Unlock widgets for $2.99" = "Unlock widgets for $2.99";
-"• Lifetime access" = "• Lifetime access";
-"• One-time payment" = "• One-time payment";
+"Unlock widgets for $2.99/month" = "Unlock widgets for $2.99/month";
+"• 3-day free trial" = "• 3-day free trial";
+"• No payment now" = "• No payment now";
 "Get" = "Get";
 
 /* Go premium */
@@ -106,6 +106,69 @@
 "New Event" = "New Event";
 "2,99 USD" = "2,99 USD";
 "Pleas send us an email to" = "Pleas send us an email to";
+
+/* PaywallGoPremium and PaywallPreview */
+"Becomes " = "Becomes ";
+"7x more efficient" = "7x more efficient";
+"\nand never forgets an event" = "\nand never forgets an event";
+"Add unlimited events" = "Add unlimited events";
+"Unlock widgets" = "Unlock widgets";
+"Customize your counter" = "Customize your counter";
+"Change counter information" = "Change counter information";
+"Import your data" = "Import your data";
+"TRY IT FOR FREE 🙌" = "TRY IT FOR FREE 🙌";
+"We're offering you\n" = "We're offering you\n";
+"3 free days\n" = "3 free days\n";
+"to try MyCountdown Pro" = "to try MyCountdown Pro";
+"We'll " = "We'll ";
+"call you back\n" = "call you back\n";
+"one day before\n" = "one day before\n";
+"the end of your trial" = "the end of your trial";
+"START AN EVENT NOW" = "START AN EVENT NOW";
+"🔔 Call me back in 2 days" = "🔔 Call me back in 2 days";
+"FREE TRIAL ⸱ SAVE 89%" = "FREE TRIAL ⸱ SAVE 89%";
+"1 Year" = "1 Year";
+" paid yearly" = "%@ paid yearly";
+"/ month" = "/ month";
+"1 Week" = "1 Week";
+" paid weekly" = "%@ paid weekly";
+"/ week" = "/ week";
+"Lifetime" = "Lifetime";
+"One-time payment" = "One-time payment";
+"Paid Once" = "Paid Once";
+"v see options" = "v see options";
+"4.8 App Store" = "4.8 App Store";
+"“It feels playful, but I’m actually being productive”" = "“It feels playful, but I’m actually being productive”";
+"Don't let yourself get overwhelmed" = "Don't let yourself get overwhelmed";
+"Add counters to your Home Screen" = "Add counters to your Home Screen";
+"Years, months, weeks, days" = "Years, months, weeks, days";
+"Real-time updates" = "Real-time updates";
+"Changed your phone?" = "Changed your phone?";
+"Support creators" = "Support creators";
+"We have big dreams for the app" = "We have big dreams for the app";
+"FREE 3-day trial period" = "FREE 3-day trial period";
+"ADD UNLIMITED EVENTS" = "ADD UNLIMITED EVENTS";
+"✓️ No payment due now" = "✓️ No payment due now";
+"Cancel anytime.\nRefund guaranteed." = "Cancel anytime.\nRefund guaranteed.";
+"Pay once, unlimited access forever" = "Pay once, unlimited access forever";
+"Confidentiality" = "Confidentiality";
+"Terms" = "Terms";
+"Restore" = "Restore";
+
+/* OnboardingView */
+"get_started" = "Get Started";
+"start_planning" = "Let's start planning important events!";
+"congratulations" = "Congratulations";
+"two_minutes_value" = "In 2 minutes a day, transform your messy moments into organized events.";
+"next" = "Next";
+"your_events" = "Your Events";
+"no_limits" = "No limits, just the freedom to follow what matters";
+"no_stress" = "No stress";
+"event_notifications" = "Be notified 1 day or 1 week before the end of the event";
+"gain_serenity" = "Gain Serenity";
+"full_control" = "Take full control of your events and widgets";
+"user_quote" = "“Like a game but better because you feel productive while I use it”";
+"lets_begin" = "Let's Begin";
 
 
 /* Tags & Organization */

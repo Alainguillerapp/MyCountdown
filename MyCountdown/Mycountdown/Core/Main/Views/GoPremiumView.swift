@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct GoPremiumView: View {
     
@@ -15,6 +16,10 @@ struct GoPremiumView: View {
     @State private var showMailError = false
     @State private var plsSendMailAlert = false
     
+    @State private var packages: [Package] = []
+    @State private var isLoading = true
+    @State private var purchaseError: String?
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             header
@@ -22,8 +27,15 @@ struct GoPremiumView: View {
             descriptionText
             
             Button {
+                guard let package = lifetimePackage else { return }
+                
                 Task {
-                    await store.buyPremium()
+                    do {
+                        try await store.purchase(package: package)
+                        dismiss()
+                    } catch {
+                        purchaseError = error.localizedDescription
+                    }
                 }
             } label: {
                 HStack {
@@ -31,7 +43,7 @@ struct GoPremiumView: View {
                         Text("UNLOCK FOREVER FOR ".localized)
                             .font(.system(size: 16, weight: .medium, design: .default))
                         +
-                        Text("2,99 USD".localized)
+                        Text(packagePriceText)
                             .font(.system(size: 18, weight: .heavy, design: .default))
                     }
                 }
@@ -43,10 +55,12 @@ struct GoPremiumView: View {
                 .shadow(color: .orangePremium.opacity(0.3), radius: 20, x: 0, y: 6)
                 .padding(.horizontal)
             }
+            .disabled(lifetimePackage == nil || isLoading)
+            .opacity(lifetimePackage == nil ? 0.5 : 1)
             
             Button {
                 Task {
-                    await store.restore()
+                    await store.restorePurchases()
                 }
             } label: {
                 Text("Restore purchases".localized)
@@ -65,6 +79,9 @@ struct GoPremiumView: View {
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.premiumGray)
             }
+        }
+        .task {
+            loadPackages()
         }
         .alert("Mail not avaible",
                isPresented: $showMailError) {
@@ -335,6 +352,32 @@ extension GoPremiumView {
         .font(.system(size: 20, weight: .regular))
         .padding(.vertical, 8)
         .padding(.horizontal)
+    }
+    
+    private func loadPackages() {
+        isLoading = true
+        
+        Purchases.shared.getOfferings { offerings, error in
+            if let error {
+                purchaseError = error.localizedDescription
+                isLoading = false
+                return
+            }
+            
+            if let current = offerings?.current {
+                packages = current.availablePackages
+            }
+            
+            isLoading = false
+        }
+    }
+    
+    private var packagePriceText: String {
+        lifetimePackage?.storeProduct.localizedPriceString ?? "-"
+    }
+    
+    private var lifetimePackage: Package? {
+        packages.first { $0.packageType == .lifetime }
     }
 }
 

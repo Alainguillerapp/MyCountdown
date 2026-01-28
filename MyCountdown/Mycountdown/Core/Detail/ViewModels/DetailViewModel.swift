@@ -54,7 +54,7 @@ final class DetailViewModel: ObservableObject {
       remindWeekBefore: countdown.remindWeekBefore,
       organizer: countdown.organizer,
       tags: countdown.tags,
-      selectedTags: countdown.tags,
+      selectedTags: countdown.selectedTags,
       order: countdown.order,
       allDay: countdown.allDay,
       weekdaysOnly: countdown.weekdaysOnly,
