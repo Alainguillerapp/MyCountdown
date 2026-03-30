@@ -2,7 +2,7 @@
 //  SlantedRightShape.swift
 //  Mycountdown
 //
-//  Created by GetApple on 14.01.2026.
+//  Created by Alexander Grushanskiy on 14.01.2026.
 //
 
 import Foundation

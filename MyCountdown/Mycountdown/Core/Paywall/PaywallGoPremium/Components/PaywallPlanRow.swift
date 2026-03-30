@@ -27,13 +27,14 @@ struct PaywallPlanRow: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(title)
-                        .font(.headline)
-                        .foregroundStyle(isSelected ? .black : .white)
-                    
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(.white)
                     
                     Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(isSelected ? Color.gray :Color.white)
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
                 }
 
                 Spacer()
@@ -59,13 +60,13 @@ struct PaywallPlanRow: View {
     var rowBackground: some View {
         ZStack {
             if isSelected {
-                Color.white.opacity(0.9)
+                Color.borderPurple
             } else {
-                Color.gray.opacity(0.5)
+                Color.gray
             }
             
             SlantedRightShape(slant: 22)
-                .fill(isSelected ? .borderPurple : .gray)
+                .fill(isSelected ? Color.white.opacity(0.9) : Color.gray.opacity(0.5))
                 .frame(width: 120)
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }
@@ -82,15 +83,12 @@ struct PaywallPlanRow: View {
     private var priceText: some View {
         VStack(spacing: 0) {
             Text(price)
-                .font(.headline)
+                .font(.subheadline)
             
             Text(duration)
                 .font(.system(size: 12))
-                .foregroundStyle(.secondary)
-            
-
         }
-        .foregroundStyle(Color.white)
+        .foregroundStyle(isSelected ? .borderPurple : .white)
         .padding(.horizontal, 18)
         .padding(.vertical, 10)
     }

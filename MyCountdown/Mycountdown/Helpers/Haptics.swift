@@ -2,7 +2,7 @@
 //  Haptics.swift
 //  Mycountdown
 //
-//  Created by GetApple on 19.01.2026.
+//  Created by Alexander Grushanskiy on 19.01.2026.
 //
 
 import UIKit

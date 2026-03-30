@@ -2,7 +2,7 @@
 //  GradientGlowButtonStyle.swift
 //  Mycountdown
 //
-//  Created by GetApple on 05.01.2026.
+//  Created by Alexander Gryshanskiy on 05.01.2026.
 //
 
 import SwiftUI
@@ -34,5 +34,4 @@ struct GradientGlowButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.97 : 1)
             .animation(.easeOut(duration: 0.15), value: configuration.isPressed)
     }
-    
 }

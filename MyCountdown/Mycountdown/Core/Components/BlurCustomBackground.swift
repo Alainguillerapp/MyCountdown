@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct BlurCustomBackground: View {
     var body: some View {
         GeometryReader { geo in

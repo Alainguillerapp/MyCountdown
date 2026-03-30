@@ -86,9 +86,9 @@
 "UNLOCK FOREVER FOR " = "UNLOCK FOREVER FOR " ;
 "Preview" = "Preview";
 "Today!" = "Today!";
-"Unlock widgets for $2.99/month" = "Unlock widgets for $2.99/month";
+"Unlock widgets for /month" = "Unlock widgets for %@/month";
 "• 3-day free trial" = "• 3-day free trial";
-"• No payment now" = "• No payment now";
+"• No payment due now" = "• No payment now";
 "Get" = "Get";
 
 /* Go premium */
@@ -128,7 +128,7 @@
 "🔔 Call me back in 2 days" = "🔔 Call me back in 2 days";
 "FREE TRIAL ⸱ SAVE 89%" = "FREE TRIAL ⸱ SAVE 89%";
 "1 Year" = "1 Year";
-" paid yearly" = "%@ paid yearly";
+"per year" = "%@ per year";
 "/ month" = "/ month";
 "1 Week" = "1 Week";
 " paid weekly" = "%@ paid weekly";

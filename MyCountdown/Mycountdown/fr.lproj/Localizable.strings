@@ -86,9 +86,9 @@
 "Delete Countdown" = "Compte à rebours de suppression";
 "Countdown successfully archived!" = "Compte à rebours archivé avec succès!";
 "Countdown successfully duplicated!" = "Compte à rebours dupliqué avec succès!";
-"Unlock widgets for $2.99/month" = "Débloquez les widgets pour 2,99 €/mois";
+"Unlock widgets for /month" = "Débloquez les widgets pour %@/mois";
 "• 3-day free trial" = "• Essai gratuit de 3 jours";
-"• No payment now" = "• Aucun paiement immédiat";
+"• No payment due now" = "• Aucun paiement immédiat";
 "Get" = "OBTENIR";
 
 /* Go premium */
@@ -128,7 +128,7 @@
 "🔔 Call me back in 2 days" = "🔔 Rappelez-moi dans 2 jours";
 "FREE TRIAL ⸱ SAVE 89%" = "ESSAI GRATUIT · ÉCONOMISEZ 89 %";
 "1 Year" = "1 an";
-" paid yearly" = "%@ par an";
+"per year" = "%@ par an";
 "2.99 €" = "2,99 €";
 "/ month" = "/mois";
 "1 Week" = "1 semaine";

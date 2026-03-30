@@ -2,7 +2,7 @@
 //  PaywallGoPremium.swift
 //  Mycountdown
 //
-//  Created by GetApple on 13.01.2026.
+//  Created by Alexander Grushanskiy on 13.01.2026.
 //
 
 import SwiftUI
@@ -19,45 +19,6 @@ struct PaywallGoPremium: View {
     
     let onClose: () -> Void
     
-    enum Plan {
-        case year
-        case week
-        case lifetime
-    }
-    
-    let features: [Feature] = [
-        .init(
-            icon: .image(Image(.featureItem1)),
-            title: "Add unlimited events".localized,
-            subtitle: "Don't let yourself get overwhelmed".localized
-        ),
-        .init(
-            icon: .image(Image(.featureItem2)),
-            title: "Unlock widgets".localized,
-            subtitle: "Add counters to your Home Screen".localized
-        ),
-        .init(
-            icon: .image(Image(.featureItem3)),
-            title: "Customize your counter".localized,
-            subtitle: "Years, months, weeks, days".localized
-        ),
-        .init(
-            icon: .image(Image(.featureItem4)),
-            title: "Change counter information".localized,
-            subtitle: "Real-time updates".localized
-        ),
-        .init(
-            icon: .image(Image(.featureItem5)),
-            title: "Import your data".localized,
-            subtitle: "Changed your phone?".localized
-        ),
-        .init(
-            icon: .emoji("❤️"),
-            title: "Support creators".localized,
-            subtitle: "We have big dreams for the app".localized
-        )
-    ]
-    
     var body: some View {
         ZStack {
             BlurCustomBackground()
@@ -70,9 +31,9 @@ struct PaywallGoPremium: View {
                 .scrollIndicators(.hidden)
                 .mask(
                     VStack(spacing: 0) {
-
+                        
                         Color.white
-
+                        
                         LinearGradient(
                             colors: [.white, .clear],
                             startPoint: .top,
@@ -81,11 +42,7 @@ struct PaywallGoPremium: View {
                         .frame(height: 30)
                     }
                 )
-
-                
                 bottonBar
-                
-                
             }
         }
         .ignoresSafeArea(.container, edges: .bottom)
@@ -99,28 +56,30 @@ struct PaywallGoPremium: View {
                     print("Sunc purchases failed:", error)
                 }
             }
-           
+            
         }
     }
 }
+
+//MARK: - Layout Sections
 
 extension PaywallGoPremium {
     
     private var contentBody: some View {
         VStack(spacing: 15) {
-
+            
             VStack {
                 header
                 heroSection
             }
-
+            
             plansSection
                 .padding(.top, 15)
-
+            
             ratingSection
             quoteSection
             featuresSection
-
+            
         }
         .padding(.bottom, 140)
     }
@@ -167,10 +126,15 @@ extension PaywallGoPremium {
         .padding(.top, 0)
         .padding(.bottom, 16)
     }
+}
+
+//MARK: - Sections
+
+extension PaywallGoPremium {
     
     private var featuresSection: some View {
         VStack(spacing: 12) {
-            ForEach(features) { feature in
+            ForEach(PaywallGoPremiumData.features) { feature in
                 FeatureCard(feature: feature)
             }
         }
@@ -193,12 +157,12 @@ extension PaywallGoPremium {
         VStack {
             VStack(spacing: 16) {
                 
-                if let yearly = store.yearlyPackage {
+                if let yeraly = store.yearlyPackage {
                     
                     PaywallPlanRow(
                         title: "1 Year".localized,
-                        subtitle: String(format: " paid yearly".localized, yearly.storeProduct.yearEquivalent()),
-                        price: yearly.localizedPrice, duration: "/ month".localized,
+                        subtitle: String(format: "per year".localized, yeraly.localizedPrice),
+                        price: "≈ " + yeraly.storeProduct.yearEquivalent() , duration: "/ month".localized,
                         isSelected: selectedPlan == .year,
                         hasTrial: true
                     ) {
@@ -207,6 +171,7 @@ extension PaywallGoPremium {
                         }
                     }
                 }
+                
                 if let weekly = store.weeklyPackage {
                     PaywallPlanRow(
                         title: "1 Week".localized,
@@ -220,6 +185,7 @@ extension PaywallGoPremium {
                         }
                     }
                 }
+                
                 if showMoreOptions {
                     if let lifetime = store.lifetimePackage {
                         PaywallPlanRow(
@@ -237,6 +203,7 @@ extension PaywallGoPremium {
                     }
                 }
             }
+            
             if !showMoreOptions {
                 Button {
                     withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) {
@@ -288,6 +255,11 @@ extension PaywallGoPremium {
         }
         .padding(.horizontal)
     }
+}
+
+//MARK: - Footer
+
+extension PaywallGoPremium {
     
     struct PaywallFooter: View {
         
@@ -332,6 +304,11 @@ extension PaywallGoPremium {
             }
         }
     }
+}
+
+//MARK: - Future Card
+
+extension PaywallGoPremium {
     
     struct FeatureCard: View {
         
@@ -346,6 +323,8 @@ extension PaywallGoPremium {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(feature.title)
                         .font(.system(size: 17, weight: .semibold))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.8)
                     
                     
                     Text(feature.subtitle)
@@ -378,20 +357,9 @@ extension PaywallGoPremium {
             }
         }
     }
-    
-    struct Feature: Identifiable {
-        let id = UUID()
-        let icon: FeatureIcon
-        let title: String
-        let subtitle: String
-    }
-    
-    enum FeatureIcon {
-        case image(Image)
-        case emoji(String)
-    }
 }
 
 #Preview {
     PaywallGoPremium(onClose: {})
+        .environmentObject(StoreManager())
 }

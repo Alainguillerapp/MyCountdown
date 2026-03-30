@@ -29,9 +29,7 @@ struct MainView: View {
     @State private var showSortPopover: Bool = false
     @State private var showImpExpPopover: Bool = false
     @State private var showDetailView: Bool = false
-    @State private var selectedCountdown: Countdown? = nil
-    @State private var showGoPremiumView: Bool = false
-    
+    @State private var selectedCountdown: Countdown? = nil    
     @State private var showPaywall: Bool = false
     
     @State private var showArchive = false
@@ -59,9 +57,6 @@ struct MainView: View {
         }
         .sheet(isPresented: $showPaywall) {
             if !store.premiumUnlocked {
-                //                GoPremiumView()
-                //                    .presentationDetents([.height(750)])
-                //                    .presentationDragIndicator(.hidden)
                 PaywallSheetContainer()
                     .presentationDetents([.large])
                     .presentationDragIndicator(.hidden)
@@ -243,8 +238,8 @@ extension MainView  {
                 if store.premiumUnlocked {
                     showingNewCountdown.toggle()
                 } else {
-                    if allCountdowns.count >= 5 {
-                        showGoPremiumView = true
+                    if allCountdowns.count >= 4 {
+                        showPaywall = true
                     } else {
                         showingNewCountdown.toggle()
                     }
@@ -275,7 +270,8 @@ extension MainView  {
             showPaywall = true
         } label: {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Unlock widgets for $2.99/month".localized)
+            
+                Text(String(format: "Unlock widgets for /month".localized , store.yearlyPackage?.storeProduct.yearEquivalent() ?? "--" ))
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
@@ -659,7 +655,7 @@ extension MainView  {
                 showingNewCountdown.toggle()
             } else {
                 if allCountdowns.count >= 5 {
-                    showGoPremiumView = true
+                    showPaywall = true
                 } else {
                     showingNewCountdown.toggle()
                 }

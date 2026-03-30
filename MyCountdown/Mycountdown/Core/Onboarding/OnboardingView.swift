@@ -2,7 +2,7 @@
 //  OnboardingView.swift
 //  Mycountdown
 //
-//  Created by GetApple on 30.12.2025.
+//  Created by Alexander Gryshanskiy on 30.12.2025.
 //
 
 import SwiftUI
@@ -164,15 +164,11 @@ struct OnboardingView: View {
                     ? .system(size: 30, weight: .regular).italic()
                     : .system(size: 17)
                 )
-//                .foregroundStyle(.black)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
         }
         .padding(.horizontal)
     }
-}
-#Preview {
-    OnboardingView(onFinish: {})
 }
 
 extension OnboardingView {
@@ -210,17 +206,6 @@ extension OnboardingView {
     }
 }
 
-struct OnboardingSlide: Identifiable {
-    let id = UUID()
-    let emoji: String?
-    let image: OnboardingImage?
-    let title: String
-    let description: String
-    let buttonTitle: String
-}
-
-enum OnboardingImage {
-    case logo
-    case onboarding1
-    case onboarding2
+#Preview {
+    OnboardingView(onFinish: {})
 }

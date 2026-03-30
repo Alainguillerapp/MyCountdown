@@ -2,7 +2,7 @@
 //  StoreProduct.swift
 //  Mycountdown
 //
-//  Created by GetApple on 28.01.2026.
+//  Created by Alexander Grushanskiy on 28.01.2026.
 //
 
 import Foundation
@@ -13,20 +13,36 @@ extension StoreProduct {
     func yearEquivalent() -> String {
 
         guard let period = subscriptionPeriod,
-              period.unit == .year else {
+              period.unit == .year
+        else {
             return localizedPriceString
         }
 
-        let yearPrice = price * Decimal(12)
+        let monthlyPrice = price / 12
+
+        let number = NSDecimalNumber(decimal: monthlyPrice)
+
+        let priceString = localizedPriceString
+
+        let currencyPart = priceString
+            .replacingOccurrences(
+                of: "[0-9.,\\s]",
+                with: "",
+                options: .regularExpression
+            )
 
         let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.locale = priceFormatter?.locale
 
-        formatter.currencyCode = currencyCode
-        
-        formatter.locale = Locale(identifier: "en_US")
+        let value = formatter.string(from: number) ?? "\(number)"
 
-        return formatter.string(from: yearPrice as NSDecimalNumber)
-        ?? localizedPriceString
+        if priceString.hasPrefix(currencyPart) {
+            return "\(currencyPart)\(value)"
+        } else {
+            return "\(value) \(currencyPart)"
+        }
     }
 }

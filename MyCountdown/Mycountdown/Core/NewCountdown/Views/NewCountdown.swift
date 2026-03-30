@@ -117,6 +117,8 @@ extension NewCountdown {
       Spacer()
       Text(isEditing ? "Countdown".localized : "New Countdown".localized)
         .font(.system(size: 24, weight: .semibold, design: .default))
+        .lineLimit(1)
+        .minimumScaleFactor(0.7)
       Spacer()
       Image("Vector")
         .opacity(0)

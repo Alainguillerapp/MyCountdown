@@ -2,7 +2,7 @@
 //  GradientButton.swift
 //  Mycountdown
 //
-//  Created by GetApple on 05.01.2026.
+//  Created by Alexander Gryshanskiy on 05.01.2026.
 //
 
 import SwiftUI
@@ -14,7 +14,7 @@ struct GradientButton: View {
     let action: () -> Void
     
     private var titleScaleFactor: CGFloat {
-        title.count > 31 ? 0.8 : 1.0
+        title.count > 31 ? 0.6 : 1.0
     }
 
     init(
@@ -47,7 +47,7 @@ struct GradientButton: View {
                 }
                     
             }
-            .padding(.vertical, subtitle == nil ? 16 : 14)
+            .padding(.vertical, subtitle == nil ? 14 : 12)
         }
         .buttonStyle(GradientGlowButtonStyle())
     }
